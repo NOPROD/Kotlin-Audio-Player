@@ -1,0 +1,28 @@
+image: registry.gitlab.com/showcheap/android-ci:master
+
+before_script:
+  - export GRADLE_USER_HOME=`pwd`/.gradle
+  - chmod +x ./gradlew
+  - echo y | sdkmanager "platforms;android-30" > ./log_android        # Specify compileSdkVersion Depends on your android project
+  - echo y | sdkmanager "build-tools;30.0.2"          # Specify build tool to install, depends on your android project
+  - sdkmanager "extras;android;m2repository" > ./log_extras_repository  # You can add sdkmanager command to install another package here
+  - sdkmanager "extras;m2repository;com;android;support;constraint;constraint-layout;1.0.2" > ./log_extras_constraint # If you need constraint-layout support
+
+stages:
+  - test
+  - build
+
+unitTest:
+  stage: test
+  only:
+    - master
+  script:
+    - ./gradlew check
+
+build:
+  stage: build
+  only:
+    - master
+  script:
+    - ./gradlew assemble
+
