@@ -1,5 +1,7 @@
 <resources>
-    <string name="app_name">Lecteur Audio</string>
-    <string name="tab_text_1">Tab un</string>
-    <string name="tab_text_2">Tab deux</string>
+    <string name="app_name">AudioReader</string>
+    <string name="tab_main">Principal</string>
+    <string name="tab_settings">Options</string>
+    <string name="setting">Coucou options</string>
+    <string name="hello">Coucou main</string>
 </resources>
