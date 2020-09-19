@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Lecteur Audio</string>
+    <string name="tab_text_1">Tab un</string>
+    <string name="tab_text_2">Tab deux</string>
+</resources>
